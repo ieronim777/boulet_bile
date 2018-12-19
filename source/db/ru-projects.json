@@ -374,12 +374,6 @@
     "wikipedia_url": "https://en.wikipedia.org/wiki/Privacy_Badger"
   },
   {
-    "description": "Кроссплатформенный IM клиент для опытных пользователей со встроенной поддержкой OTR.",
-    "slug": "psi",
-    "url": "http://psi-plus.com/",
-    "wikipedia_url": "https://ru.wikipedia.org/wiki/Psi"
-  },
-  {
     "description": "Социальный потоковый сервер для установки на собственный сервер.",
     "slug": "pumpio",
     "url": "http://pump.io/",

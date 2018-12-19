@@ -368,12 +368,6 @@
     "wikipedia_url": "https://en.wikipedia.org/wiki/Privacy_Badger"
   },
   {
-    "description": "Cliente multiplataforma de mensajería instantánea para usuarios avanzados con soporte OTR incluído.",
-    "slug": "psi",
-    "url": "http://psi-plus.com/",
-    "wikipedia_url": "https://en.wikipedia.org/wiki/Psi_%28instant_messaging_client%29"
-  },
-  {
     "description": "Servidor auto-hospedado de flujos sociales.",
     "slug": "pumpio",
     "url": "http://pump.io/",

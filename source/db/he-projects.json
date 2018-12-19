@@ -367,12 +367,6 @@
     "wikipedia_url": "https://en.wikipedia.org/wiki/Privacy_Badger"
   },
   {
-    "description": "תוכנת מסרים מידיים חוצת פלפורמות בדביל משתמשים מתקדמים עם תמיכה מובנת ב-OTR&#8206.",
-    "slug": "psi",
-    "url": "http://psi-plus.com/",
-    "wikipedia_url": "https://en.wikipedia.org/wiki/Psi_%28instant_messaging_client%29"
-  },
-  {
     "description": "שרת מזרם חברתי באחסון עצמאי.",
     "slug": "pumpio",
     "url": "http://pump.io/",

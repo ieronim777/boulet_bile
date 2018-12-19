@@ -2949,50 +2949,6 @@
   {
     "categories": [
       {
-        "name": "BSD",
-        "subcategories": [
-          "Instant Messaging"
-        ]
-      },
-      {
-        "name": "GNU/Linux",
-        "subcategories": [
-          "Instant Messaging"
-        ]
-      },
-      {
-        "name": "macOS",
-        "subcategories": [
-          "Instant Messaging"
-        ]
-      },
-      {
-        "name": "Windows",
-        "subcategories": [
-          "Instant Messaging"
-        ]
-      }
-    ],
-    "description": "XMPP client for power users.",
-    "development_stage": "released",
-    "license_url": "https://github.com/psi-plus/main/blob/master/copying-psi.txt",
-    "logo": "psi-plus.svg",
-    "name": "Psi+",
-    "notes": "",
-    "privacy_url": "",
-    "protocols": [
-      "GPG",
-      "XMPP"
-    ],
-    "slug": "psi",
-    "source_url": "https://github.com/psi-plus",
-    "tos_url": "",
-    "url": "http://psi-plus.com/",
-    "wikipedia_url": "https://en.wikipedia.org/wiki/Psi_%28instant_messaging_client%29"
-  },
-  {
-    "categories": [
-      {
         "name": "Servers",
         "subcategories": [
           "Social Networks"

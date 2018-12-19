@@ -368,12 +368,6 @@
     "wikipedia_url": "https://en.wikipedia.org/wiki/Privacy_Badger"
   },
   {
-    "description": "Multiplatform IM applicatie voor power gebruikers met ingebouwde OTR ondersteuning.",
-    "slug": "psi",
-    "url": "http://psi-plus.com/",
-    "wikipedia_url": "https://en.wikipedia.org/wiki/Psi_%28instant_messaging_client%29"
-  },
-  {
     "description": "Zelfgehost sociale stream server.",
     "slug": "pumpio",
     "url": "http://pump.io/",

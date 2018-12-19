@@ -371,12 +371,6 @@
     "wikipedia_url": "https://en.wikipedia.org/wiki/Privacy_Badger"
   },
   {
-    "description": "跨平台的即时通讯（IM）客户端，内建 OTR。",
-    "slug": "psi",
-    "url": "http://psi-plus.com/",
-    "wikipedia_url": "https://en.wikipedia.org/wiki/Psi_%28instant_messaging_client%29"
-  },
-  {
     "description": "自行架设的社交信息流服务器。",
     "slug": "pumpio",
     "url": "http://pump.io/",

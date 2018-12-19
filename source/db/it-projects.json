@@ -372,12 +372,6 @@
     "wikipedia_url": "https://en.wikipedia.org/wiki/Privacy_Badger"
   },
   {
-    "description": "Client di messaggistica istantanea per utenti avanzati con supporto OTR integrato.",
-    "slug": "psi",
-    "url": "http://psi-plus.com/",
-    "wikipedia_url": "https://it.wikipedia.org/wiki/Psi_%28software%29"
-  },
-  {
     "description": "Server di streaming sociale self-hosted.",
     "slug": "pumpio",
     "url": "http://pump.io/",

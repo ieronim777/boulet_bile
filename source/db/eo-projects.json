@@ -364,12 +364,6 @@
     "wikipedia_url": "https://en.wikipedia.org/wiki/Privacy_Badger"
   },
   {
-    "description": "Multi-platform IM client for power users with built-in OTR support.",
-    "slug": "psi",
-    "url": "http://psi-plus.com/",
-    "wikipedia_url": "https://en.wikipedia.org/wiki/Psi_%28instant_messaging_client%29"
-  },
-  {
     "description": "Memgastiga servilo por sociaj fluoj.",
     "slug": "pumpio",
     "url": "http://pump.io/",
