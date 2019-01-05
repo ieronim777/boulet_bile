@@ -1,157 +1,117 @@
-If you want to contribute and have any questions whatsoever, join us
-[at #prism-break on Freenode][#freenode]. It's a great place to get help. Don't
-ask to ask, just send your question and someone will get back to you soon.
+## Discuss
 
-[#freenode]: https://webchat.freenode.net/?channels=prism-break
+We have a Matrix chat at [#prism-break:matrix.org][], and a Discourse forum at
+<https://prism-break.discourse.group>.
 
-## Help wanted
+[#prism-break:matrix.org]: https://riot.im/app/#/room/#prism-break:matrix.org
 
-If you just want to help, consider checking out issues that have [help wanted][]
-label. Pull requests that resolve this issues will be merged without additional
-discussion.
+## Donate
 
-[help wanted]: https://gitlab.com/prism-break/prism-break/issues?label_name%5B%5D=help+wanted
+Consider setting up a recurring donation to our project at Open Collective:
+<https://opencollective.com/prism-break>
 
-## Projects
+## Translate
 
-### Which Files to Edit
+Help us translate PRISM Break on Weblate:
+<https://hosted.weblate.org/projects/prism-break/>
 
-If you want to edit or add a project to PRISM Break, see
-`source/db/en-projects.json`.
+## Screen
 
-If you want to add a project logo, see `source/assets/logos`. SVG is highly
-preferred. Make sure that there is no inappropriate white background or
-margins, and that logo's aspect ratio is 1:1. In Inkscape, go to File ->
-Document Properties -> Page Size -> Custom size and make sure that Width and
-Height are identical.
+https://gitlab.com/prism-break/prism-break/issues
 
-To remove white margins, go to File -> Document Properties -> Page Size ->
-Custom size -> Resize page to connect... -> Resize page to drawing or
-selection. Then set Width/Height to the highest value of the two to get back to
-1:1 aspect ratio. Particular value is not important.
+## Mirror
 
-To re-center the logo, press Ctrl+A to select all objects, press Ctrl+Shift+A
-to open "Align and Distribute" menu, choose to align relative to page, tick
-"treat selection as group", and then press "Center on horizontal axis" and
-"Center on vertical axis" buttons.
+Install [Clojure][]. Then, to build a non-minified version of the site, run:
 
-If possible, please also run [svgcleaner][] on SVG logos and [zopflipng][] on
-PNG logos. If you haven't done that, make sure to say that in merge request so
-that reviewer can do that for you.
+```
+clj -m prism-break.tasks.build
+```
 
-[svgcleaner]: https://github.com/RazrFalcon/svgcleaner
-[zopflipng]: https://github.com/google/zopfli
+To build a minified version of the site, install [Brotli][], [Zopfli][], and
+run:
 
-### Add the Project Data
+```
+clj -m prism-break.tasks.build-release
+```
 
-Append the sample project to the file `source/db/en-projects.json`. Edit the values to fit your project.
+### Nix
 
-**Sample Project:**
+Instead of managing dependencies manually, you can install [Nix][] and run
+`nix-shell`. This will spawn a shell with all dependencies (Clojure, Brotli,
+Zopfli) set up. Dependencies are pinned down and exactly match the versions
+used to build <https://prism-break.org>.
 
-    {
-      "development_stage": "released",
-      "description": "Encrypted, anonymous web browsing powered by the Tor network.",
-      "license_url": "https://gitweb.torproject.org/tor.git?a=blob_plain;hb=HEAD;f=LICENSE",
-      "logo": "tor-browser.png",
-      "notes": "Using Tor Browser to sign into websites that contain your real ID is counterproductive, and may trip the site's fraud protection. Make sure to check for HTTPS before signing in to a website through Tor.\n\nSigning into HTTP websites can result in your ID being captured by a Tor exit node.",
-      "privacy_url": "https://www.torproject.org/about/overview.html.en",
-      "source_url": "https://gitweb.torproject.org/tor.git",
-      "name": "Tor Browser",
-      "tos_url": "",
-      "url": "https://www.torproject.org/projects/torbrowser.html.en",
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Tor_Browser",
-      "protocols": [
-        "SSL/TLS",
-        "Tor"
-      ],
-      "categories": [
-        {
-          "name": "BSD",
-          "subcategories": [
-            "Web Browsers"
-          ]
-        },
-        {
-          "name": "GNU/Linux",
-          "subcategories": [
-            "Web Browsers"
-          ]
-        },
-        {
-          "name": "OS X",
-          "subcategories": [
-            "Web Browsers"
-          ]
-        },
-        {
-          "name": "Windows",
-          "subcategories": [
-            "Web Browsers"
-          ]
-        }
-      ],
-      "slug": "tor-browser"
-    },
+Once you leave the shell, you will end up in your regular environment without
+any dependencies as if nothing's happened.
 
-Only the fields `name`, `description`, `logo`, `url`, `categories`, and `development_stage` are required. The other fields can be left empty with a value of `""` (`[]` for `protocols`).
+Nix is only available for Linux and macOS.
 
-### Add the Project Thumbnail
-**Project thumbnails should be in the SVG or PNG format.** Get a SVG version or a 1024px x 1024px (or better) PNG version of the logo for `./source/assets/logos`.
+### Windows
 
-### Testing Your Edits/Additions
-When you're done with your edits, you should build the site to see if it compiles properly. To do so, run:
+If you run Windows, you will need [Cygwin][] or [WSL][] to install Clojure.
+It's because [the wrapper](https://github.com/clojure/brew-install) is written
+in shell script.
 
-    make test
+This is subject to change. I (Yegor) will probably end up writing a
+cross-platform wrapper in Go.
 
-Which will generate:
+### Reproducible builds
 
-    ./public/en/
+Build commands print a [NAR][] hash of `public` directory. It is used to ensure
+[reproducible builds][]. You can ask someone else to build the same [revision][]
+as you, and verify that build result matches. You can also compare against
+[hashes produced by our CI][CI jobs].
 
-It might take a little while (~minutes) if you're on a slower computer.
+PRISM Break uses [its own NAR implementation][prism-break.data.nar]. If you
+have [Nix][], you can compare the hash against `nix hash-path public`. Mind
+that our NAR doesn't handle executables and symlinks the same way Nix does.
+See [`prism-break.data.nar`][prism-break.data.nar] docs for more info.
 
-### Publishing Your Changes
-Visit `./public/en/` in your browser and check out your work. If it looks good, commit the changes and issue a pull request. Thanks for your contribution!
+[Clojure]: https://clojure.org/guides/getting_started
+[Brotli]: https://github.com/google/brotli
+[Zopfli]: https://github.com/google/zopfli
+[Nix]: https://nixos.org/nix/
+[Cygwin]: https://www.cygwin.com
+[WSL]: https://docs.microsoft.com/en-us/windows/wsl/about
+[NAR]: https://nixos.org/nixos/nix-pills/automatic-runtime-dependencies.html#idm140737316073472
+[reproducible builds]: https://reproducible-builds.org
+[revision]: http://dionisev.com/2016/03/git-revisions
+[CI jobs]: https://gitlab.com/prism-break/prism-break/-/jobs
+[prism-break.data.nar]: src/prism_break/data/nar.clj
 
-# Contribute: Localizations
+## Update
 
-### Which Files to Edit
-If you want to translate project descriptions, URLs, or notes into your favorite language, this data resides in:
+## Hack
 
-    ./source/db/*-projects.json
+You will need to learn some Clojure. See Clojure's [Getting Started guide][],
+and [Clojure for the Brave and True][] book.
 
-**Warning:** When doing a complete site translation, do not translate the `"protocols"`, `"categories"`, or `"slug"` values to your language. Translating the `"slug"` will break URLs when switching between languages. Translating `"protocols"` and `"categories"` should be done in the `./source/locales/*.json` file instead.
+If you're just starting out, install Clojure (covered in [Mirror](#mirror)
+section) and run:
 
-If you want to translate protocol descriptions, names, or URLs, this data resides in:
+```
+clj -A:dev -m prism-break.tasks.http
+```
 
-    ./source/db/protocols/*.json
+This will start an HTTP server listening on <http://localhost:9090>. It will
+reload Clojure namespaces on each request, so this is a good quick way to make
+small changes without building site over and over again.
 
-If you're interested in translating the site itself (all the nouns, verbs, and sentences that make up the static portion of the site), look here:
+To set up an [interactive environment][], see [CIDER][] for Emacs,
+[vim-fireplace][] for Vim. While you're at it, install [Parinfer][]
+or learn [Paredit][].
 
-    ./source/locales/*.json
+[Parinfer]: https://shaunlebron.github.io/parinfer/
+[Paredit]: http://danmidwood.com/content/2014/11/21/animated-paredit.html
 
-If your language file doesn't exist yet, you can copy the en.json file and start translating from there.
+To start nREPL, run:
 
-### JSON Validation
-**Make sure your JSON validates.** You can use either use [JSONLint](http://jsonlint.com/) online or install it locally with `npm install jsonlint -g`.
+```
+clj -A:dev -m prism-break.tasks.nrepl
+```
 
-A common mistake is putting unescaped quotation marks in a sentence. Make sure to use Unicode typographic marks (curly quotes) or escape regular (straight) quotes with a backslash.
-
-    "description": "Use curly quotes “like this”.",
-
-    "description": "Escape straight quotes \"like this\".",
-
-    "description": "Not escaping quotes will cause "an error".",
-
-### Testing Your Translation
-When you're done with your translation, you should build the site in your language to see if it works. If want to test out your French translations for example, run `make fr`. Traditional Chinese translations? Run `make zh-TW`. It might take a little while (~minutes) if you're on a slower computer.
-
-### Publishing Your Changes
-Your newly translated site is available at './public/**language-code**/'. Visit it in your browser and check out your work. Looking good!
-
-Remember to revert the `Makefile` change and then commit the changes and issue a pull request.
-
-## Mirrors
-
-If you wish to mirror this site, [nylira/prism-break-static](https://github.com/nylira/prism-break-static) is probably of interest to you. This is a completely static (but constantly updated) version of the site you can save to browse locally or serve over HTTP.
-
-There are no known mirrors yet. If you make one, please tell us and we'll link it here.
+[Getting Started guide]: https://clojure.org/guides/getting_started
+[Clojure for the Brave and True]: https://www.braveclojure.com/clojure-for-the-brave-and-true/
+[interactive environment]: http://tonsky.me/blog/interactive-development/
+[CIDER]: https://github.com/clojure-emacs/cider
+[vim-fireplace]: https://github.com/tpope/vim-fireplace

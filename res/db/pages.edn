@@ -1,0 +1,5 @@
+{license {:name #prism-break/l10n "License"}
+ privacy-policy {:name #prism-break/l10n "Privacy policy"}
+ source-code {:name #prism-break/l10n "Source code"}
+ website {:name #prism-break/l10n "Website"}
+ wikipedia {:name #prism-break/l10n "Wikipedia article"}}

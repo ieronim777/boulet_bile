@@ -1,0 +1,8 @@
+{e2e/none {:description #prism-break/l10n ""
+           :name #prism-break/l10n ""}
+ e2e/weak {:description #prism-break/l10n ""
+           :name #prism-break/l10n "Weak end-to-end encryption"}
+ nonfree {:description #prism-break/l10n ""
+          :name #prism-break/l10n "Nonfree"}
+ service {:description #prism-break/l10n ""
+          :name #prism-break/l10n "Service"}}

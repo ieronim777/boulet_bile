@@ -1,79 +1,55 @@
-# PRISM Break
+## Overview
 
-Welcome to the PRISM Break project. Here's a quick overview of the code. JSON containing all of the project data is filtered through [LiveScript](https://livescript.net/) and then compiled to plain HTML with [Jade](https://pugjs.org/) templates. Stylesheets are managed with [Stylus](http://stylus-lang.com/), a CSS preprocessor.
+PRISM Break is a software recommendation site that helps people to gain control
+over their data.
 
-The prism-break build process relies on several npm packages. Make sure to have [node.js](https://nodejs.org/) installed on your system if you want to contribute to the code.
+If you want to work on the project, please review [docs][] and [code of conduct][].
 
-If you'd like to translate the project to your favorite language, there's no need to install node.js or even download the code. Just add translated data to the appropriate JSON files on GitHub and submit a Pull Request - if anything's missing, the English version will be used instead. That being said, setting up the project locally will allow you to run `make localize_LANG` (where `LANG` is a language code) to get a nice list of things for you to translate.
+[code of conduct]: CODE_OF_CONDUCT.md
+[docs]: CONTRIBUTING.md
 
-More information for translators can be found in [`CONTRIBUTING.md`](CONTRIBUTING.md).
+## Principles
 
-Join us [at #prism-break on Freenode][#prism-break]! Feel free to ask any questions.
+- **Privacy and security**
 
-[#prism-break]: https://webchat.freenode.net/?channels=prism-break
+  We expect networking projects to follow [principle of least authority][], to
+  be metadata-resistant, and to be [end-to-end encrypted][] with [forward
+  secrecy][]. Modern crypto primitives, [memory safety][], and small, auditable
+  implementations are major advantages.
 
-## Project Inclusion Guidelines
+  [principle of least authority]: https://en.wikipedia.org/wiki/Principle_of_least_privilege
+  [end-to-end encrypted]: https://en.wikipedia.org/wiki/End-to-end_encryption
+  [forward secrecy]: https://en.wikipedia.org/wiki/Forward_secrecy
+  [memory safety]: https://en.wikipedia.org/wiki/Memory_safety
 
-- **Only F/OSS software is allowed to be featured on PRISM Break.**
+- **Free software**
 
-  PRISM Break follows [the GNU/FSF definition of Free Software](https://www.gnu.org/philosophy/free-sw.html) and prefers software licensed under [a compatible license](https://www.gnu.org/licenses/license-list.html) but may allow other [OSI reviewed licenses](https://opensource.org/licenses). The only exception is when free software offers no viable alternative to proprietary software. "Web Search" is the only category with this exception currently.
+  We expect projects to use an [FSF approved license][], or [one of our extras][].
+  [Open core][] projects are discouraged.
 
-- **Quality over quantity.**
+  We might, in rare circumstances, recommend a source-available application
+  (but never a binary blob), or a proprietary service, only if there are no
+  pragmatic libre options. These projects have a pink `Non-free` label.
 
-  PRISM Break strives to promote the best open source applications. Ease of use, stability, and performance matter. This is the first time many people are looking to leave their proprietary walled gardens. Let's make it a good experience for them. If you're writing a privacy-minded FOSS app, please finish it before asking PRISM Break to promote it.
+  [FSF approved license]: https://www.gnu.org/licenses/license-list.en.html
+  [one of our extras]: src/prism_break/tags/spdx.clj#L5
+  [open core]: https://en.wikipedia.org/wiki/Open-core_model
 
-- **The software must have a strong security focus.**
+- **User experience**
 
-  This can vary case-to-case, but generally here are the attributes we look for:
+  Ease of use, stability, and performance matter. Many of our readers are
+  trying to regain control over their privacy for their first time. Let's make
+  it a good experience for them.
 
-  - Can keep up with security events
-  - Understand security and take it seriously (this is very broad, but can range from "don't invent your own crypto" to "think about and design against metadata leaks")
-  - Offers security advantages that other projects don't
+## Mirrors
 
-- **Before suggesting software, please first search this repository to see if your request has already been made.**
+Canonical URLs:
 
-  If it has been rejected, you'll learn why. If the issue hasn't been addressed, add a comment as to why it deserves inclusion. If the software has been improved significantly since the initial rejection, feel free to suggest it again.
+- ICANN: https://prism-break.org
+- Namecoin: https://prism-break.bit
+- I2P: http://zmw2cyw2vj7f6obx3msmdvdepdhnw2ctc4okza2zjxlukkdfckhq.b32.i2p
+- Tor: http://prismx447tozbtkmvk4egxkv4nbyhch4xpsm7ezrmkjdegdrfxbrhsid.onion
 
-- **Pull requests are prioritized over issues.**
+Mirrors:
 
-I will respond to them quicker and they will get an answer faster.
-
-## Project Submission (quick version)
-
-### 1. Edit
-
-Add the project you wish to get listed.
-
-    vi ./source/db/en-projects.json                  # edit or add a project
-
-    cp project.png ./source/assets/images/logos/medium/    # put 60x60 PNG here
-
-### 2. Test
-
-Make sure your edits do not break the site by building the English version of PRISM Break. Open the pages to make sure it all works.
-
-    make test      # builds ./public/en for preview purposes
-
-### 3. Translate
-
-You edited the `en-projects.json` file earlier. This only creates a project description for the English version of PRISM Break. Please copy the project description to all the other language files, so translators work on it more easily.
-
-    # Copying your edits to *-projects.json
-    ./source/db/*-projects.json
-
-At this point, feel free to commit the changes and submit a pull request. Steps #4 and #5 are only necessary if you want to build your own copy of the site.
-
-### 4. Build
-
-    make           # get a drink, it'll take a while build all 27 languages
-
-    make reset     # making a drastic change? run this instead of `make`
-                   # this will vaporize /public before running `make`
-
-### 5. Serve
-
-    make serve     # starts HTTP server on http://127.0.0.1:8080
-
-### Need more details on how to submit a project or a translation?
-
-Read [`CONTRIBUTING.md`](CONTRIBUTING.md) for more detail into the process.
+- GitLab Pages: https://prism-break.gitlab.io/prism-break/

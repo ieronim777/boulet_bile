@@ -1,0 +1,74 @@
+{android #{stock/android chromeos lineageos replicant}
+ chrome #{chromeos linux macos openbsd windows}
+ chromeos {:categories #{pc}
+           :name "ChromeOS"
+           :urls {wikipedia #prism-break/l10n+url "https://en.wikipedia.org/wiki/Chrome_OS"}}
+ darknet #{tails whonix}
+ debian {:categories #{pc servers}
+         :description #prism-break/l10n "Stable, community-driven Linux distribution."
+         :license #prism-break/spdx {:free? true}
+         :name "Debian"
+         :urls {license #prism-break/l10n+url {icann "https://www.debian.org/legal/licenses/"
+                                               onion "http://sejnfjrq6szgca7v.onion/legal/licenses/"}
+                website #prism-break/l10n+url {icann "https://www.debian.org"
+                                               onion "http://sejnfjrq6szgca7v.onion"}
+                wikipedia #prism-break/l10n+url "https://en.wikipedia.org/wiki/Debian"}}
+ fedora {:categories #{pc servers}
+         :name "Fedora"
+         :urls {website #prism-break/l10n+url "https://getfedora.org"
+                wikipedia #prism-break/l10n+url "https://en.wikipedia.org/wiki/Fedora_(operating_system)"}}
+ firefox #prism-break/diff {:+ #{android linux macos openbsd windows}
+                            :- #{darknet replicant}}
+ freebsd {:categories #{pc servers}
+          :name "FreeBSD"
+          :urls {website #prism-break/l10n+url "https://www.freebsd.org"
+                 wikipedia #prism-break/l10n+url "https://en.wikipedia.org/wiki/FreeBSD"}}
+ ios {:categories #{mobile}
+      :name "iOS"}
+ lineageos {:categories #{mobile}
+            :name "LineageOS"
+            :urls {website #prism-break/url "https://lineageos.org"
+                   wikipedia #prism-break/l10n+url "https://en.wikipedia.org/wiki/LineageOS"}}
+ linux #{debian fedora openwrt qubes tails whonix}
+ macos {:categories #{pc}
+        :name "macOS"}
+ openbsd {:categories #{pc routers servers}
+          :name "OpenBSD"
+          :urls {website #prism-break/url "https://www.openbsd.org"
+                 wikipedia #prism-break/l10n+url "https://en.wikipedia.org/wiki/OpenBSD"}}
+ openwrt {:categories #{routers}
+          :name "OpenWrt"
+          :urls {website #prism-break/url "https://openwrt.org"
+                 wikipedia #prism-break/l10n+url "https://en.wikipedia.org/wiki/OpenWrt"}}
+ qubes {:categories #{pc}
+        :description #prism-break/l10n "Fedora/Xen-based OS designed to provide strong security through isolation."
+        :license #prism-break/spdx "GPL-2.0-only"
+        :name "Qubes OS"
+        :urls {license #prism-break/url {icann "https://www.qubes-os.org/doc/license/"
+                                         onion "http://sik5nlgfc5qylnnsr57qrbm64zbdx6t4lreyhpon3ychmxmiem7tioad.onion/doc/license/"}
+               source-code #prism-break/url {icann "https://www.qubes-os.org/doc/source-code/"
+                                             onion "http://sik5nlgfc5qylnnsr57qrbm64zbdx6t4lreyhpon3ychmxmiem7tioad.onion/doc/source-code/"}
+               website #prism-break/url {icann "https://www.qubes-os.org"
+                                         onion "http://sik5nlgfc5qylnnsr57qrbm64zbdx6t4lreyhpon3ychmxmiem7tioad.onion"}
+               wikipedia #prism-break/l10n+url "https://en.wikipedia.org/wiki/Qubes_OS"}}
+ replicant {:categories #{mobile}
+            :description #prism-break/l10n "Fully free Android distribution for pre-2013 Samsung devices."
+            :labels #{unstable}
+            :name "Replicant"
+            :urls {website #prism-break/url "https://replicant.us"
+                   wikipedia #prism-break/l10n+url "https://en.wikipedia.org/wiki/Replicant_(operating_system)"}}
+ stock/android {:categories #{mobile}
+                :name "Android"}
+ tails {:categories #{pc}
+        :name "Tails"
+        :urls {license #prism-break/l10n+url "https://tails.boum.org/doc/about/license/"
+               website #prism-break/l10n+url "https://tails.boum.org"
+               wikipedia #prism-break/l10n+url "https://en.wikipedia.org/wiki/Tails_(operating_system)"}}
+ unix #{linux macos openbsd}
+ whonix {:categories #{pc}
+         :name "Whonix"
+         :urls {website #prism-break/url {icann "https://www.whonix.org"
+                                          onion "http://kkkkkkkkkk63ava6.onion"}
+                wikipedia #prism-break/l10n+url "https://en.wikipedia.org/wiki/Whonix"}}
+ windows {:categories #{pc}
+          :name "Windows"}}

@@ -1,0 +1,2 @@
+msgid "Secure-by-default XMPP server installer."
+msgstr "Установщик безопасных по умолчанию XMPP-серверов."

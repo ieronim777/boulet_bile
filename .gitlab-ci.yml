@@ -1,19 +1,15 @@
 image: nixos/nix
 
-before_script:
-  - nix-channel --add https://nixos.org/channels/nixpkgs-unstable
-  - nix-channel --update
-
 build:
   stage: build
-  script: nix-shell --run make
+  script: nix-shell --run 'clojure -m prism-break.tasks.build-release'
   artifacts:
     paths:
-    - public
+    - out
 
 pages:
   stage: deploy
-  script: ":"
+  script: mv out public
   artifacts:
     paths:
     - public

@@ -1,0 +1,6 @@
+{mobile {:name #prism-break/l10n "Mobile"}
+ pc {:name #prism-break/l10n "PC"}
+ routers {:name #prism-break/l10n "Routers"}
+ servers {:name #prism-break/l10n "Servers"}
+ tv {:name #prism-break/l10n "TV"}
+ voice {:name #prism-break/l10n "Voice Assistants"}}

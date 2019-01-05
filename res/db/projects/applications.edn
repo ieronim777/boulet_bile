@@ -1,0 +1,64 @@
+{aenigma {:categories->platforms {instant-messaging #{servers/debian}}
+          :description #prism-break/l10n "Secure-by-default XMPP server installer."
+          :license #prism-break/spdx "GPL-3.0-or-later"
+          :name "Aenigma"
+          :pages->url {source-code #prism-break/url "https://github.com/openspace42/aenigma"}}
+ andotp {:categories->platforms {authentication #{mobile/android}}
+         :description #prism-break/l10n "Two-factor authenticator for Android."
+         :license #prism-break/spdx "MIT"
+         :name "andOTP"
+         :pages->url {source-code #prism-break/url "https://github.com/andOTP/andOTP"}}
+ authy {:categories->platforms {authentication #{mobile/android pc/chrome ios macos pc/windows}}
+        :labels #{service}
+        :name "Authy"}
+ borg {:categories->platforms {file-sync #{unix}}}
+ duckduckgo {:categories->platforms {search #{}}
+             :description #prism-break/l10n "Independent no-tracking search engine."
+             :labels #{service}
+             :name "DuckDuckGo"
+             :pages->url {privacy-policy #prism-break/url {icann "https://duckduckgo.com/privacy"
+                                                           onion "https://3g2upl4pq6kufc4m.onion/privacy"}
+                          website #prism-break/url {icann "https://duckduckgo.com"
+                                                    onion "https://3g2upl4pq6kufc4m.onion"}}}
+ f-droid {:categories->platforms {app-store #{mobile/android}}
+          :license #prism-break/spdx "GPL-3.0-or-later"
+          :name "F-Droid"}
+ google-authenticator {:categories->platforms {authentication #{mobile/android ios}}
+                       :name "Google Authenticator"}
+ google-play {:categories->platforms {app-store #{mobile/android}}
+              :name "Google Play"}
+ k-9 {:categories->platforms {email #{mobile/android}}
+      :description #prism-break/l10n "Email client for Android with OpenKeychain support."
+      :license #prism-break/spdx "Apache-2.0"
+      :name "K-9 Mail"
+      :pages->url {source-code #prism-break/url "https://github.com/k9mail/k-9"
+                   website #prism-break/url "https://k9mail.github.io"
+                   wikipedia #prism-break/l10n+url "https://en.wikipedia.org/wiki/K-9_Mail"}}
+ mailpile {:categories->platforms {email #{pc/linux pc/openbsd}}
+           :description #prism-break/l10n "User-friendly email client with built-in GPG and Tor."
+           :license #prism-break/spdx "AGPL-3.0-or-later"
+           :name "Mailpile"
+           :pages->url {source-code #prism-break/url "https://github.com/mailpile/Mailpile"
+                        website #prism-break/url "https://www.mailpile.is"
+                        wikipedia #prism-break/l10n+url "https://en.wikipedia.org/wiki/Mailpile"}}
+ searx {:categories->platforms {search #{servers/unix}}}
+ signal {:categories->platforms {audio-video #{mobile/android ios}
+                                 instant-messaging #{mobile/android ios pc/linux macos pc/windows}}
+         :description #prism-break/l10n "Convenient metadata-resistant messaging app."
+         :license #prism-break/spdx "GPL-3.0-only"
+         :name "Signal"
+         :pages->url {source-code #prism-break/url "https://github.com/signalapp"
+                      website #prism-break/url "https://signal.org"}}
+ tahoe-lafs {:categories->platforms {file-sync #{servers/linux servers/windows}}
+             :description #prism-break/l10n "Distributed least authority file store."
+             :license #prism-break/spdx "GPL-2.0-or-later"
+             :name "Tahoe-LAFS"
+             :pages->url {source-code #prism-break/url "https://github.com/tahoe-lafs/tahoe-lafs"
+                          website #prism-break/url "https://tahoe-lafs.org"
+                          wikipedia #prism-break/l10n+url "https://en.wikipedia.org/wiki/Tahoe-LAFS"}}
+ tofu {:categories->platforms {authentication #{ios}}
+       :description #prism-break/l10n "Two-factor authenticator for iOS."
+       :license #prism-break/spdx "ISC"
+       :name "Tofu"
+       :pages->url {source-code #prism-break/url "https://github.com/calleerlandsson/Tofu"
+                    website #prism-break/url "https://tofuauth.com"}}}

@@ -1,6 +1,6 @@
-with import <nixpkgs> {};
+{ pkgs ? import ./pkgs.nix {} }: with pkgs;
 
 stdenvNoCC.mkDerivation {
   name = "prism-break";
-  nativeBuildInputs = [ git jq nodejs rsync ];
+  nativeBuildInputs = [ clojure brotli zopfli ];
 }
