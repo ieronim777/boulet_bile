@@ -1,7 +1,8 @@
-{:aliases {:dev {:extra-deps {ring/ring-devel {:mvn/version "1.7.1"}
-                              ring/ring-jetty-adapter {:mvn/version "1.7.1"}}}}
- :deps {org.clojure/clojure {:mvn/version "1.9.0"}
-        com.yegortimoshenko/unstable.data.html {:git/url "https://gitlab.com/yegortimoshenko/unstable.data.html"
+{:aliases {:doc {:extra-deps {com.transumption/unstable.tasks.doc {:git/url "https://gitlab.com/transumption/unstable/tasks.doc"
+                                                                   :sha "8805e2a3821ade13e374656e73e929cc872853f9"}}
+                 :main-opts ["-m" "transumption.unstable.tasks.doc"]}}
+ :deps {org.clojure/clojure {:mvn/version "1.10.0"}
+        com.yegortimoshenko/unstable.data.html {:git/url "https://gitlab.com/transumption/unstable/data.html"
                                                 :sha "7d068b80aa1b28dee909d096a43a9bc87470d304"}
         com.yegortimoshenko/io.http {:mvn/version "20170425.114348"}
         org.apache.xmlgraphics/batik-codec {:mvn/version "1.10"}
@@ -10,5 +11,7 @@
         org.spdx/spdx-tools {:mvn/version "2.1.15"}
         commons-io/commons-io {:mvn/version "2.6"}
         commons-validator/commons-validator {:mvn/version "1.6"}
-        garden {:mvn/version "1.3.6"}}
+        garden {:mvn/version "1.3.6"}
+        ring/ring-devel {:mvn/version "1.7.1"}
+        ring/ring-jetty-adapter {:mvn/version "1.7.1"}}
  :paths #{"res" "src"}}

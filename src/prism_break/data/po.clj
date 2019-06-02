@@ -14,13 +14,13 @@
             [blancas.kern.lexer :as lex]
             [clojure.string :as str]))
 
-(def po-style
+(def ^:private po-style
   (assoc lex/basic-def :comment-line "#"))
 
-(def po
+(def ^:private po
   (lex/make-parsers po-style))
 
-(def po-parser
+(def ^:private po-parser
   (let [{:keys [string-lit token trim]} po]
     (kern/bind [_ trim
                 _ (token "msgid")
@@ -33,7 +33,7 @@
   (into (array-map)
         (kern/value (kern/many po-parser) s)))
 
-(def po-format
+(def ^:private po-format
   "msgid \"%s\"
 msgstr \"%s\"
 

@@ -1,4 +1,4 @@
-(ns prism-break.tools.svg
+(ns prism-break.data.svg
   (:require [clojure.java.io :as io])
   (:import (org.apache.batik.transcoder TranscoderInput TranscoderOutput)
            (org.apache.batik.transcoder.image PNGTranscoder)))

@@ -1,4 +1,4 @@
-(ns prism-break.tasks.http
+(ns prism-break.tasks.serve
   "Starts an HTTP server that reloads modified namespaces on each request."
   (:require [ring.adapter.jetty :refer [run-jetty]]
             [ring.middleware.reload :refer [wrap-reload]]))

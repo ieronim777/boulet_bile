@@ -5,11 +5,11 @@ build:
   script: nix-shell --run 'clojure -m prism-break.tasks.build-release'
   artifacts:
     paths:
-    - out
+    - public
 
 pages:
   stage: deploy
-  script: mv out public
+  script: ':'
   artifacts:
     paths:
     - public

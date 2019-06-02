@@ -1,6 +1,0 @@
-{bit {:fallbacks [icann]}
- bit/onion {:fallbacks [onion icann]}
- i2p {:fallbacks [i2p/b32 icann]}
- i2p/b32 {:fallbacks [i2p icann]}
- icann {}
- onion {:fallbacks [icann]}}

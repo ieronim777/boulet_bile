@@ -1,6 +1,8 @@
 (ns prism-break.tags.spdx
-  "SPDX tag reader that validates syntax, and provides license metadata."
+  "SPDX tag reader that validates syntax, free software status,
+  and provides license metadata."
   (:refer-clojure :exclude [read])
+  (:require [clojure.spec.alpha :as s])
   (:import (org.spdx.rdfparser.license ConjunctiveLicenseSet
                                        DisjunctiveLicenseSet
                                        License
@@ -10,10 +12,10 @@
 
 (set! *warn-on-reflection* true)
 
-(def ^:private extra-libre-licenses
+(def ^:private extra-free-licenses
   "Some licenses are not (yet) approved by FSF. Or maybe we just disagree.
   To allow projects under one of such licenses to be recommended on the site
-  *without* nonfree label, add it here.
+  *without* non-free label, add it here.
    
   Please don't abuse this feature. We will never, ever recommend users to run
   unsandboxed binaries without having access to corresponding source code. We
@@ -27,11 +29,11 @@
   [s]
   (re-find #"^https?://(www\.)?opensource\.org" s))
 
-(defprotocol SPDX
-  (expr [this])
-  (free? [this]))
+(defprotocol Expression
+  (expr [this] "Emits abstract syntax tree for this SPDX expression.")
+  (free? [this] "Checks if this expression is compatible with free software."))
 
-(extend-protocol SPDX
+(extend-protocol Expression
   ConjunctiveLicenseSet
   (expr [this]
     (cons :and (map expr (.getMembers this))))
@@ -48,7 +50,7 @@
      :url (first (sort-by prefer-upstream (.getSeeAlso this)))})
   (free? [this]
     (or (.isFsfLibre this)
-        (contains? extra-libre-licenses (str this))))
+        (contains? extra-free-licenses (str this))))
   LicenseException
   (expr [this]
     (let [id (.getLicenseExceptionId this)]
@@ -71,3 +73,11 @@
         (throw (ex-info warning {}))))
     {:expr (expr spdx)
      :free? (free? spdx)}))
+
+(s/def ::expr any?) ; TODO!
+
+(s/def ::free? boolean?)
+
+(s/def ::license
+  (s/keys :req-un #{::free?}
+          :opt-un #{::expr}))
